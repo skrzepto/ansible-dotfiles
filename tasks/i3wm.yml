@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Install I3WM
+    yum: name={{item}} state=present
+    with_items:
+      - i3
+      - i3lock
+
+  - name: Linking i3config
+    file: src="{{ lookup('env', 'HOME') }}/.dotfiles/i3/i3config/base" dest="{{ lookup('env', 'HOME') }}/.config/i3/config" state=link force=yes
+
+  - name: Linking i3status
+    file: src="{{ lookup('env', 'HOME') }}/.dotfiles/i3/i3status/base" dest="{{ lookup('env', 'HOME') }}/.config/i3/i3status.conf" state=link force=yes
+
+  - name: Restarting i3
+    command: i3-msg restart
+    ignore_errors: yes

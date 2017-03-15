@@ -1,0 +1,46 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install base packages
+      yum: name={{item}} state=present
+      with_items:
+        - epel-release
+        - redshift
+        - network-manager-applet
+        - htop
+        - pavucontrol
+        - xclip
+        - thunar
+        - nautilus
+        - file-roller
+        - tmux
+        - git
+        - gedit
+        - vim
+        - shutter
+        - xarchiver
+        - emacs
+        - glances
+        - keepassx2
+        # - arandr
+        # - pcmanfm
+      become: true
+      become_user: root
+
+    - name: Install communication applications
+      yum: name={{item}} state=present
+      with_items:
+        - evolution
+        - hexchat
+        # - mumble
+      become: true
+      become_user: root
+
+    - name: Install office / pdf
+      yum: name={{item}} state=present
+      with_items:
+        - libreoffice
+        - evince
+        # - mupdf
+      become: true
+      become_user: root

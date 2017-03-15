@@ -1,0 +1,63 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install git
+      yum: name={{item}} state=present
+      with_items:
+        - git
+      become: true
+      become_user: root
+
+    - name: Git Username
+      git_config:
+        name: user.name
+        scope: global
+        value: Simon Mucha
+
+    - name: Git email
+      git_config:
+        name: user.email
+        scope: global
+        value: shims506@gmail.com
+
+    - name: Git Setting default editor
+      git_config:
+        name: core.editor
+        scope: global
+        value: vim
+
+    - name: Git excludes files
+      git_config:
+        name: core.excludesfiles
+        scope: global
+        value: ~/.dotfiles/git/gitignore
+
+    - name: Git push default
+      git_config:
+        name: push.default
+        scope: global
+        value: simple
+
+    - name: Git branch autosetupmerge
+      git_config:
+        name: branch.autosetupmerge
+        scope: global
+        value: true
+
+    - name: Git diff
+      git_config:
+        name: diff.tool
+        scope: global
+        value: vimdiff
+
+    - name: Git grep linenumber
+      git_config:
+        name: grep.lineNumber
+        scope: global
+        value: true
+
+    - name: Git browser Firefox
+      git_config:
+        name: web.browser
+        scope: global
+        value: firefox

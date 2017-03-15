@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  tasks:
+  - name: install the latest version of vim
+    yum:
+      name: vim
+      state: present
+    become: true
+    become_user: root
+
+  - file: src="{{ lookup('env', 'HOME') }}/.dotfiles/vim/vimrc" dest="{{ lookup('env', 'HOME') }}/.vimrc" state=link force=yes
+
+  - name: vundle
+    git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
+
+  - name: vundle plugins
+    shell: vim +PluginInstall +qall

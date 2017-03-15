@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install Java dev tools
+      yum: name={{item}} state=present
+      with_items:
+        - java-1.8.0-openjdk
+        - java-1.8.0-openjdk-devel
+        # - eclipse
+      become: true
+      become_user: root

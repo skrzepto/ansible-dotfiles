@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  vars:
+      eclipse_url: "http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/2/eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz&r=1"
+      eclipse_sha: "sha512:26e58e69a6cf4bb1a10e9df9dffb4ed5103b46bd2cb441134620e1036b36fdd59ab15ee787de1d3d843c1081a3f493275543228766d00112f4573beec0f3be89"
+  tasks:
+    - name: download eclipse neon and check (sha512)
+      get_url:
+        url: "{{ eclipse_url }}"
+        dest: "{{ lookup('env', 'HOME') }}/Downloads/eclipse.tar.gz"
+        checksum: "{{ eclipse_sha }}"
+
+    - name: unarchive eclipse
+      # Unarchive a file that is already on the remote machine
+      unarchive:
+        src: "{{ lookup('env', 'HOME') }}/Downloads/eclipse.tar.gz"
+        dest: "{{ lookup('env', 'HOME') }}/Apps/"
+        remote_src: True
+
+    - name: link eclipse binary to /usr/local/bin
+      file: dest="/usr/local/bin/eclipse" src="{{ lookup('env', 'HOME') }}/Apps/eclipse/eclipse" state=link force=yes
+      become: true
+      become_user: root
