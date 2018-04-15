@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Update pip to latest
+    shell: pip install --upgrade pip
+    become: true
+    
+  - name: Install virtualenv wrapper
+    shell: pip install virtualenvwrapper
+    become: true
+
+
+

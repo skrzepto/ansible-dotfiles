@@ -9,16 +9,9 @@
       force: yes
     become: no
 
-- include: tasks/main.yml
-- include: tasks/git.yml
-- include: tasks/gnome-terminal.yml
-- include: tasks/i3wm.yml
-- include: tasks/zsh.yml
-- include: tasks/vim.yml
-- include: tasks/multimedia.yml
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
-- include: tasks/java.yml
-- include: tasks/smartgit.yml
-- include: tasks/idea-community.yml
-- include: tasks/eclipse.yml
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+- import_playbook: tasks/main.yml
+- import_playbook: tasks/git.yml
+- import_playbook: tasks/i3wm.yml
+- import_playbook: tasks/zsh.yml
+- import_playbook: tasks/vim.yml
+- import_playbook: tasks/python.yml

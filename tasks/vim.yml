@@ -2,7 +2,7 @@
 - hosts: localhost
   tasks:
   - name: install the latest version of vim
-    yum:
+    dnf:
       name: vim
       state: present
     become: true
