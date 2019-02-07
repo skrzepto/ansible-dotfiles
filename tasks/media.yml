@@ -13,5 +13,8 @@
     dnf: name={{item}} state=present
     with_items:
       - cmus
+      - youtube-dl
+      - ffmpeg
+      - ffmpeg-devel
     become: true
     become_user: root

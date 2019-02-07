@@ -30,6 +30,9 @@
         - scrot
         - xbacklight
         - redshift-gtk
+        - exa
+        - ripgrep
+        - rsync
       become: true
       become_user: root
 
