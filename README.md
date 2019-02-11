@@ -25,6 +25,10 @@ alacritty https://github.com/jwilm/alacritty
 bat https://github.com/sharkdp/bat
 parallel https://github.com/mmstick/parallel
 
+
+#### Ranger terminal picture viewer
+https://github.com/ranger/ranger/wiki/Image-Previews
+
 # Credit where credit is due
 
 Original repo was taken from Jeff Geerling and modified to my liking
