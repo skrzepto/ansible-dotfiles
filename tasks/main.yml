@@ -33,6 +33,8 @@
         - exa
         - ripgrep
         - rsync
+        - ranger
+        - fd-find
       become: true
       become_user: root
 

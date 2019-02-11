@@ -9,6 +9,22 @@ git clone git@github.com:skrzepto/ansible-dotfiles.git ~/.ansible-dotfiles
 ansible-playbook -K ~/.ansible-dotfiles/main.yml
 ```
 
+### Dev tools
+
+exa - show contents of folder
+rg - ripgrep, search files recruse
+bat - show contents of file with syntax highlighting
+alacritty - gpu terminal
+ranger - terminal file browser
+fd - find but rusty
+parallel - rusty version of xargs
+
+*tools that need to be installed manually*
+
+alacritty https://github.com/jwilm/alacritty
+bat https://github.com/sharkdp/bat
+parallel https://github.com/mmstick/parallel
+
 # Credit where credit is due
 
 Original repo was taken from Jeff Geerling and modified to my liking
