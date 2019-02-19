@@ -24,7 +24,7 @@ parallel - rusty version of xargs
 alacritty https://github.com/jwilm/alacritty
 bat https://github.com/sharkdp/bat
 parallel https://github.com/mmstick/parallel
-
+safeyes https://slgobinath.github.io/SafeEyes/
 
 #### Ranger terminal picture viewer
 https://github.com/ranger/ranger/wiki/Image-Previews
