@@ -35,6 +35,7 @@
         - rsync
         - ranger
         - fd-find
+        - copyq
       become: true
       become_user: root
 
