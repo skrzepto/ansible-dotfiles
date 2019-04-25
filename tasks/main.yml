@@ -36,6 +36,7 @@
         - ranger
         - fd-find
         - copyq
+        - fzf
       become: true
       become_user: root
 
@@ -56,3 +57,13 @@
         - mupdf
       become: true
       become_user: root
+    
+    - name: Install cargo
+      shell: curl https://sh.rustup.rs -sSf | sh
+
+    - name: Install rust dev tools - Alacritty terminal
+      shell: cargo install --git https://github.com/jwilm/alacritty --force
+    
+    - name: Install rust dev tools - Alacritty terminal
+      shell: cargo install --git https://github.com/jwilm/alacritty --force
+

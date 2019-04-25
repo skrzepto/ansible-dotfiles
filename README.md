@@ -18,7 +18,7 @@ alacritty - gpu terminal
 ranger - terminal file browser
 fd - find but rusty
 parallel - rusty version of xargs
-
+fzf - fuzzy finder (find files by fuzziness)
 *tools that need to be installed manually*
 
 alacritty https://github.com/jwilm/alacritty
