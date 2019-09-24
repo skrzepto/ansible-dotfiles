@@ -3,10 +3,11 @@
   connection: local
   tasks:
   - name: Install shell packages
-    dnf: name={{item}} state=present
-    with_items:
+    dnf:
+      name:
       - zsh
       - util-linux-user
+      state: present
     become: true
     become_user: root
 

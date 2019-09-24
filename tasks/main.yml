@@ -2,68 +2,60 @@
 - hosts: localhost
   tasks:
     - name: Install base packages
-      dnf: name={{item}} state=present
-      with_items:
-        - redshift
-        - network-manager-applet
-        - htop
-        - pavucontrol
-        - xclip
-        - thunar
-        - nautilus
-        - file-roller
-        - tmux
-        - git
-        - gedit
-        - neovim
-        - python2-neovim
-        - python3-neovim
-        - shutter
-        - xarchiver
-        - emacs
-        - glances
-        - keepassxc
-        - golang
-        - arandr
-        - syncthing
-        - lxterminal
-        - scrot
-        - xbacklight
-        - redshift-gtk
-        - exa
-        - ripgrep
-        - rsync
-        - ranger
-        - fd-find
-        - copyq
+      dnf: 
+        name: 
+        - redshift 
+        - network-manager-applet 
+        - htop 
+        - pavucontrol 
+        - xclip 
+        - thunar 
+        - nautilus 
+        - file-roller 
+        - tmux 
+        - git 
+        - gedit 
+        - neovim 
+        - python3-neovim 
+        - shutter 
+        - xarchiver 
+        - emacs 
+        - glances 
+        - keepassxc 
+        - golang 
+        - arandr 
+        - syncthing 
+        - lxterminal 
+        - scrot 
+        - xbacklight 
+        - redshift-gtk 
+        - exa 
+        - ripgrep 
+        - rsync 
+        - ranger 
+        - fd-find 
+        - copyq 
         - fzf
+        state: present
       become: true
       become_user: root
 
     - name: Install communication applications
-      dnf: name={{item}} state=present
-      with_items:
+      dnf:
+        name:
         - evolution
         - hexchat
         # - mumble
+        state: present
       become: true
       become_user: root
 
     - name: Install office / pdf
-      dnf: name={{item}} state=present
-      with_items:
+      dnf:
+        name:
         - libreoffice
         - evince
         - mupdf
+        state: present
       become: true
       become_user: root
-    
-    - name: Install cargo
-      shell: curl https://sh.rustup.rs -sSf | sh
-
-    - name: Install rust dev tools - Alacritty terminal
-      shell: cargo install --git https://github.com/jwilm/alacritty --force
-    
-    - name: Install rust dev tools - Alacritty terminal
-      shell: cargo install --git https://github.com/jwilm/alacritty --force
-

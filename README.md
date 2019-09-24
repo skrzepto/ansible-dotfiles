@@ -11,20 +11,21 @@ ansible-playbook -K ~/.ansible-dotfiles/main.yml
 
 ### Dev tools
 
-exa - show contents of folder
-rg - ripgrep, search files recruse
-bat - show contents of file with syntax highlighting
-alacritty - gpu terminal
-ranger - terminal file browser
-fd - find but rusty
-parallel - rusty version of xargs
-fzf - fuzzy finder (find files by fuzziness)
+* exa - show contents of folder
+* rg - ripgrep, search files recruse
+* bat - show contents of file with syntax highlighting
+* alacritty - gpu terminal
+* ranger - terminal file browser
+* fd - find but rusty
+* parallel - rusty version of xargs
+* fzf - fuzzy finder (find files by fuzziness)
+
 *tools that need to be installed manually*
 
-alacritty https://github.com/jwilm/alacritty
-bat https://github.com/sharkdp/bat
-parallel https://github.com/mmstick/parallel
-safeyes https://slgobinath.github.io/SafeEyes/
+* alacritty https://github.com/jwilm/alacritty
+* bat https://github.com/sharkdp/bat
+* parallel https://github.com/mmstick/parallel
+* safeyes https://slgobinath.github.io/SafeEyes/
 
 #### Ranger terminal picture viewer
 https://github.com/ranger/ranger/wiki/Image-Previews
