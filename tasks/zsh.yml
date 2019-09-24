@@ -20,6 +20,10 @@
   - name: symlink zshrc
     file: dest="{{ lookup('env', 'HOME') }}/.zshrc" src="{{ lookup('env', 'HOME') }}/.dotfiles/zsh/zshrc" state=link force=yes
 
-  - name: Make zsh default
+  - name: Make zsh default for root user
     shell: chsh -s /bin/zsh
+    become: true
+
+  - name: Make zsh default for current user
+    shell: chsh -s $(which zsh) $(whoami)
     become: true
