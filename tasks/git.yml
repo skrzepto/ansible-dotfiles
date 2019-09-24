@@ -5,6 +5,7 @@
       dnf:
         name:
         - git
+        - tig
         state: present
       become: true
       become_user: root
