@@ -26,6 +26,7 @@ ansible-playbook -K ~/.ansible-dotfiles/main.yml
 * bat https://github.com/sharkdp/bat
 * parallel https://github.com/mmstick/parallel
 * safeyes https://slgobinath.github.io/SafeEyes/
+* dbeaver https://dbeaver.io/download/
 
 #### Ranger terminal picture viewer
 https://github.com/ranger/ranger/wiki/Image-Previews
